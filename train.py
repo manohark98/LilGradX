@@ -10,14 +10,13 @@ from lilgradx.ll.optimizer import Adam
 dataset = Dataset(file_path="penguins.csv", target_column="species", drop_columns=['island', 'sex'])
 X_train, X_test, y_train, y_test = dataset.get_data()
 
-# Initialize the MLP model
 nin = len(X_train[0])
 nouts = [6, 3]
 mlp = MLP(nin=nin, nouts=nouts)
 
-# Set hyperparameters
+
 epochs = 20
-loss_function = "cross_entropy"  # Options: "cross_entropy" or "mse"
+loss_function = "cross_entropy"  
 training_accuracies = []
 adam_optimizer = Adam(mlp.parameters(), lr=0.001)
 
@@ -26,11 +25,11 @@ for epoch in range(epochs):
     total_loss = 0
     correct = 0
     for x_np, target_idx in zip(X_train, y_train):
-        # Convert input features to Value objects
+ 
         x = [Value(xi) for xi in x_np]
-        output_probs = mlp(x)  # Forward pass
+        output_probs = mlp(x)
         
-        # Compute loss
+ 
         if loss_function == "cross_entropy":
             loss = nll_loss(output_probs, target_idx.item())
         elif loss_function == "mse":
@@ -38,17 +37,17 @@ for epoch in range(epochs):
         else:
             raise ValueError("Invalid loss function selected.")
 
-        loss.backward()  # Backward pass
+        loss.backward()  
         total_loss += loss.data
         
-        adam_optimizer.step()  # Update parameters
+        adam_optimizer.step()  
         
-        # Track correct predictions
+
         predicted_idx = np.argmax([p.data for p in output_probs])
         if predicted_idx == target_idx:
             correct += 1
 
-        mlp.zero_grad()  # Reset gradients
+        mlp.zero_grad()  
 
     train_accuracy = correct / len(y_train) * 100
     training_accuracies.append(train_accuracy)
@@ -57,7 +56,7 @@ for epoch in range(epochs):
 
 print(f"Avg Train Accuracy: {np.mean(training_accuracies):.2f}%")
 
-# Save model configuration and parameters (only .data values)
+# Saves model parameters 
 model_state = {
     "config": {
         "nin": nin,

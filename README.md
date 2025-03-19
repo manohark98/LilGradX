@@ -129,7 +129,7 @@ The training script performs the following tasks:
 
 The testing script is responsible for:
 1. **Model Loading:**  
-   Reads the JSON file to restore the network configuration and parameter values.
+   Trained model parameters will be loaded from json file .
 2. **Inference:**  
    Reconstructs the MLP using the saved configuration, assigns the saved parameter values, and uses the model to perform predictions on the test set.
 3. **Evaluation:**  
