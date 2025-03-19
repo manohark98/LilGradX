@@ -1,2 +1,2 @@
 # tinygrad
-Tiny Grad 
+Little Grad
