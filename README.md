@@ -42,12 +42,28 @@ In this version, training and testing have been separated into distinct scripts.
   Training and testing scripts are separated for clarity and modularity.
   
 - **JSON Model Saving:**  
-  Saves only the model configuration and numerical parameters (avoiding issues with pickling lambdas) into a JSON file, which can later be loaded for testing or inference.
+  Saves only the model configuration and numerical parameters  into a JSON file, which can later be loaded for testing or inference.
 
 ---
 
 ## Folder Structure
-
+LilGradX/ \
+│── lilgradx/ \
+│   ├── losses/ \
+│   │   ├── losses.py \
+│   ├── ll/ \
+│   │   ├── __init__.py \
+│   │   ├── activations.py \
+│   │   ├── layer.py \
+│   │   ├── loss.py \
+│   │   ├── mlp.py \
+│   │   ├── neuron.py \
+│   │   ├── optimizer.py \
+│   ├── __init__.py \
+│   ├── dataset.py \
+│   ├── tensor.py \
+│── train.py \
+│── test.py \
 
 ---
 
