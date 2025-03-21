@@ -5,6 +5,9 @@ LilGradX is a lightweight neural network library built entirely from scratch in 
 In this version, training and testing have been separated into distinct scripts. The model parameters are saved in a JSON file after training, and then reloaded during testing for inference.
 
 ---
+## Upcoming updates:
+- Weights and bias initialization
+- Batch Normalization 
 
 ## Table of Contents
 
@@ -24,7 +27,7 @@ In this version, training and testing have been separated into distinct scripts.
 ## Features
 
 - **Custom Autograd Engine:**  
-  Implements a `Value` class that supports automatic differentiation (backpropagation) with overloaded arithmetic operators.
+  Implemented a `Value` class that supports automatic differentiation (backpropagation) with overloaded arithmetic operators.
   
 - **Neural Network Fundamentals:**  
   Build your network using neurons, layers, and a multi-layer perceptron (MLP) structure.
@@ -71,25 +74,25 @@ LilGradX/ \
 
 ### Tensor Module (`tensor.py`)
 
-The `Value` class is the heart of the LilGradX Clone. It encapsulates a scalar value along with its gradient and the backward propagation function. Key functionalities include:
+The `Value` class is the heart of the LilGradX . It encapsulates a scalar value along with its gradient and the backward propagation function. the following key functionalities included:
 - **Arithmetic Operations:** Overloaded `+`, `*`, `-`, `/`, and power operations.
-- **Activation Functions:** Implements functions like `tanh()`, `exp()`, `log()`, and `leaky_relu()`.
-- **Backpropagation:** The `backward()` method builds the computation graph and propagates gradients through it.
+- **Activation Functions:** Implemented functions like `tanh()`, `exp()`, `log()`, and `leaky_relu()`.
+- **Backpropagation:** The `backward()` method performs backpropagation in the computational graph and propagates gradients through it.
 
 ### Loss Functions (`losses/losses.py`)
 
-This module implements two loss functions:
+This module implemented two loss functions:
 - **`nll_loss(probs, target_index)`**:  
   Calculates the Negative Log Likelihood loss by taking the log of the softmax probability corresponding to the target class.
 - **`mse_loss(outputs, targets)`**:  
-  Computes the Mean Squared Error loss, averaging the squared differences between predictions and targets.
+  Computes the Mean Squared Error loss by averaging the squared differences between predictions and targets.
 
 ### Neural Network Components (`ll/`)
 
 This directory contains the core building blocks of your neural network:
 
 - **`activations.py`**:  
-  Defines the `SoftmaxLayer` which normalizes the output logits into a probability distribution. It subtracts the maximum logit for numerical stability.
+  Defines the `SoftmaxLayer` to normalize the logit outputs of nueral layer  into a probability distribution. It subtracts the maximum logit to bring the  numerical stability.
   
 - **`layer.py`**:  
   Implements the `Layer` class, which is essentially a collection of `Neuron` objects. The layer processes an input vector and returns the outputs.
@@ -102,9 +105,7 @@ This directory contains the core building blocks of your neural network:
   
 - **`optimizer.py`**:  
   Implements the Adam optimizer. It updates each parameter using adaptive learning rates based on first and second moment estimates of gradients.
-  
-- **`__init__.py`**:  
-  Exports all the major components (Neuron, Layer, MLP, SoftmaxLayer, CrossEntropyLoss) so they can be easily imported.
+
 
 ### Dataset Module (`dataset.py`)
 
@@ -119,7 +120,7 @@ The training script performs the following tasks:
 1. **Data Preparation:**  
    Loads and preprocesses the data from a CSV file.
 2. **Model Initialization:**  
-   Constructs an MLP based on the number of input features and a defined layer structure.
+   Constructs an MLP with the given number of input features and output features.
 3. **Training Loop:**  
    Iterates over the training data for a set number of epochs, performing forward passes, loss computation (either NLL or MSE), backpropagation, and parameter updates using the Adam optimizer.
 4. **Model Saving:**  

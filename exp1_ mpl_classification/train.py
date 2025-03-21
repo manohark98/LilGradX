@@ -7,7 +7,7 @@ from lilgradx.tensor import Value
 from lilgradx.ll.optimizer import Adam
 import matplotlib.pyplot as plt
 # Load dataset
-dataset = Dataset(file_path="penguins.csv", target_column="species", drop_columns=['island', 'sex'])
+dataset = Dataset(file_path="./penguins.csv", target_column="species", drop_columns=['island', 'sex'])
 X_train, X_test, y_train, y_test = dataset.get_data()
 
 nin = len(X_train[0])
