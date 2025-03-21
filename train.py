@@ -5,20 +5,20 @@ from lilgradx.ll.mlp import MLP
 from lilgradx.losses.losses import nll_loss, mse_loss
 from lilgradx.tensor import Value
 from lilgradx.ll.optimizer import Adam
-
+import matplotlib.pyplot as plt
 # Load dataset
 dataset = Dataset(file_path="penguins.csv", target_column="species", drop_columns=['island', 'sex'])
 X_train, X_test, y_train, y_test = dataset.get_data()
 
 nin = len(X_train[0])
-nouts = [6, 3]
+nouts = [6, 6, 3]
 mlp = MLP(nin=nin, nouts=nouts)
 
 
 epochs = 20
 loss_function = "cross_entropy"  
 training_accuracies = []
-adam_optimizer = Adam(mlp.parameters(), lr=0.001)
+adam_optimizer = Adam(mlp.parameters(), lr=0.01)
 
 # Training loop
 for epoch in range(epochs):
@@ -68,3 +68,13 @@ model_state = {
 with open('model_state.json', 'w') as f:
     json.dump(model_state, f)
 print("Model state saved successfully as 'model_state.json'.")
+
+
+# Plot Training Accuracy
+plt.plot(range(1, epochs+1), training_accuracies, marker='o', linestyle='-', color='b', label="Training Accuracy")
+plt.xlabel("Epoch")
+plt.ylabel("Accuracy (%)")
+plt.title("Training Accuracy over Epochs")
+plt.legend()
+plt.grid()
+plt.show()

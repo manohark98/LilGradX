@@ -1,6 +1,6 @@
-# LilGradX Clone
+# LilGradX 
 
-LilGradX Clone is a lightweight neural network library built entirely from scratch in Python . This project is designed to help beginners understand the core principles of neural networks by implementing the fundamental building blocks like tensors with automatic differentiation, neurons, layers, loss functions, and optimizers.
+LilGradX is a lightweight neural network library built entirely from scratch in Python . This project is designed to help beginners understand the core principles of neural networks by implementing the fundamental building blocks like tensors with automatic differentiation, neurons, layers, loss functions, and optimizers.
 
 In this version, training and testing have been separated into distinct scripts. The model parameters are saved in a JSON file after training, and then reloaded during testing for inference.
 
