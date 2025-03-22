@@ -1,4 +1,9 @@
-# LilGradX 
+
+<p align="center">
+<img src="./images/LilGradX.png" width="400" title="Ray Romano saying What do you think?" alt="Ray Romano saying What do you think?"/>
+</p>
+
+
 
 LilGradX is a lightweight neural network library built entirely from scratch in Python . This project is designed to help beginners understand the core principles of neural networks by implementing the fundamental building blocks like tensors with automatic differentiation, neurons, layers, loss functions, and optimizers.
 
