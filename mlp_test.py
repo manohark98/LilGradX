@@ -12,6 +12,7 @@ dataset = Dataset(file_path="penguins.csv", target_column="species", drop_column
 _, X_test, _, y_test = dataset.get_data()
 
 
+# Load the trained parameters from json file 
 with open('model_state.json', 'r') as f:
     model_state = json.load(f)
 print("Model state loaded successfully from 'model_state.json'.")

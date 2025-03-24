@@ -56,13 +56,13 @@ for epoch in range(epochs):
 
 print(f"Avg Train Accuracy: {np.mean(training_accuracies):.2f}%")
 
-# Saves model parameters 
+# Saves the model parameters in json file 
 model_state = {
     "config": {
         "nin": nin,
         "nouts": nouts
     },
-    # Convert each parameter's NumPy array to a list.
+    # Converting each parameter's NumPy array to a list.
     "params": [p.data.tolist() for p in mlp.parameters()]
 }
 

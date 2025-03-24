@@ -9,14 +9,14 @@ LilGradX is a lightweight neural network library built from scratch in Python(In
 
 ## Why Gradient?
 
-Gradient plays a crucial role to make the neurons in NN to learn the patterns in data . The slope from the gradient tells  how much a neuron changes with respect to the input variable, This gradient performed  the model to tune the weights with a certin learning rate , this tuning of weights is done by  calcualting the loss function of the model, like MSE , Cross entropy, which tells how much the error difference between the predicted auput from NN and the actual output.
-
+Gradients play a crucial role in helping neural networks learn patterns in data. The gradient represents how much the loss function changes with respect to the model’s parameters (weights and biases). Using this gradient, the model updates its weights with a certain learning rate to minimize the loss. The loss function, such as Mean Squared Error (MSE) or Cross-Entropy, quantifies the difference between the predicted output and the actual output, guiding the optimization processW
 
 ---
-## Upcoming updates:
+## Upcoming updates in this project:
 - Weights and bias initialization using Kamini
-- Batch Normalization 
-
+- Bathwise Training
+- [Batch Normalization](https://arxiv.org/pdf/1502.03167)
+- Changes needed for layer module. 
 ## Table of Contents
 - [About LilGradx](#About)
 - [Features](#features)
@@ -48,8 +48,8 @@ LilGradX/ \
 │   ├── __init__.py \
 │   ├── dataset.py \
 │   ├── tensor.py \
-│── train.py \
-│── test.py \
+│── mlp_train.py \
+│── mlp_test.py \
 
 ---
 
@@ -188,7 +188,13 @@ The `Dataset` class handles:
         
     ```
 
-### Training Script (`train.py`)
+
+Note:- Use the following script and customize as per your requirement for training the mlp model.
+
+
+
+### [Training Script  ](https://github.com/manohark98/LilGradX/blob/main/mlp_train.py)
+
 
 The training script performs the following tasks:
 1. **Data Preparation:**  
@@ -200,7 +206,7 @@ The training script performs the following tasks:
 4. **Model Saving:**  
    Instead of pickling (which has issues with lambda functions), the script extracts and saves only the numerical values (from the `.data` attribute) along with the network configuration (input size and layer sizes) into a JSON file (`model_state.json`).
 
-### Testing Script (`test.py`)
+### [Testings Script  ](https://github.com/manohark98/LilGradX/blob/main/mlp_test.py)
 
 The testing script is responsible for:
 1. **Model Loading:**  
@@ -210,3 +216,4 @@ The testing script is responsible for:
 3. **Evaluation:**  
    Computes test accuracy and displays performance metrics, including a confusion matrix and a detailed classification report using scikit-learn.
 
+Note:- While using the above scripts, try to set the same settings of layers in both train and test script
