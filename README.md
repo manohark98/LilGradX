@@ -94,10 +94,7 @@ After calling the backward() method, it performs gradient with repsective each n
   <img src="./images/backward.svg" width="500" title="Feed forward Neural Netowork " alt=""/>
 </p>
 
-```python 
 
-
-```
 ### [Loss Functions (`losses/losses.py`) ](https://github.com/manohark98/LilGradX/blob/main/lilgradx/losses/losses.py)
 
 This module implemented two loss functions:
