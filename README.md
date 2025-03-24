@@ -91,7 +91,7 @@ After calling the backward() method, it performs gradient with repsective each n
 
 
 <p align="center">
-  <img src="./images/Backward.svg" width="500" title="Feed forward Neural Netowork " alt=""/>
+  <img src="./images/backward.svg" width="500" title="Feed forward Neural Netowork " alt=""/>
 </p>
 
 ```python 
