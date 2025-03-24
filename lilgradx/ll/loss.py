@@ -1,5 +1,5 @@
 import numpy as np
-from lilgradx.tensor import Value
+from lilgradx.tensor import Tensor
 
 class CrossEntropyLoss:
     def __init__(self, eps=1e-9):
@@ -24,4 +24,4 @@ class CrossEntropyLoss:
         log_probs = -np.log(probs + self.eps)
 
         # Return loss as a Value object
-        return Value(log_probs) 
+        return Tensor(log_probs) 

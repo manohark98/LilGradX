@@ -1,4 +1,4 @@
-from lilgradx.tensor import Value
+from lilgradx.tensor import Tensor
 
 def nll_loss(probs, target_index):
     """
