@@ -13,7 +13,7 @@ Gradients play a crucial role in helping neural networks learn patterns in data.
 
 ---
 ## Upcoming updates in this project:
-- Weights and bias initialization using Kamini
+- Weights and bias initialization using kaiming 
 - Bathwise Training
 - [Batch Normalization](https://arxiv.org/pdf/1502.03167)
 - Changes needed for layer module. 
