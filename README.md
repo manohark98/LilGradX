@@ -134,7 +134,7 @@ This directory contains the core building blocks of your neural network:
     self.softmax = SoftmaxLayer()
   ```
   
-- [Neural Layer (`ll/activations.py`) ](https://github.com/manohark98/LilGradX/blob/main/lilgradx/ll/layer.py):  
+- [Neural Layer (`ll/layer.py`) ](https://github.com/manohark98/LilGradX/blob/main/lilgradx/ll/layer.py):  
   Implements the `Layer` class, which is essentially a collection of `Neuron` objects. The layer processes an input vector and returns the outputs.
     ```python 
     from lilgradx.ll.layer import Layer
@@ -164,7 +164,7 @@ This directory contains the core building blocks of your neural network:
         
     ```
   
-- [Optimizer  (`ll/ptimizer.py`) ](https://github.com/manohark98/LilGradX/blob/main/lilgradx/ll/mlp.py):  
+- [Optimizer  (`ll/optimizer.py`) ](https://github.com/manohark98/LilGradX/blob/main/lilgradx/ll/optimizer.py):  
   Implements the Adam optimizer. It updates each parameter using adaptive learning rates based on first and second moment estimates of gradients.
     ```python 
     from lilgradx.ll.optimizer import Adam
