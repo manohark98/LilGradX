@@ -13,7 +13,7 @@ Gradients play a crucial role in helping neural networks learn patterns in data.
 
 ---
 ## Upcoming updates in this project:
-- Weights and bias initialization using Kamini
+- Weights and bias initialization using kaiming 
 - Bathwise Training
 - [Batch Normalization](https://arxiv.org/pdf/1502.03167)
 - Changes needed for layer module. 
@@ -94,10 +94,7 @@ After calling the backward() method, it performs gradient with repsective each n
   <img src="./images/backward.svg" width="500" title="Feed forward Neural Netowork " alt=""/>
 </p>
 
-```python 
 
-
-```
 ### [Loss Functions (`losses/losses.py`) ](https://github.com/manohark98/LilGradX/blob/main/lilgradx/losses/losses.py)
 
 This module implemented two loss functions:
