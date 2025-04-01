@@ -11,7 +11,7 @@ LilGradX is a lightweight neural network library built from scratch in Python(In
 
 Gradients play a crucial role in helping neural networks learn patterns in data. The gradient represents how much the loss function changes with respect to the model’s parameters (weights and biases). Using this gradient, the model updates its weights with a certain learning rate to minimize the loss. The loss function, such as Mean Squared Error (MSE) or Cross-Entropy, quantifies the difference between the predicted output and the actual output, guiding the optimization processW
 
-Blog - [How Gradient Works](https://67eb1843f2f58a0008b7bf3f--grad-mk.netlify.app/)
+Blog - [How Gradient Works](https://grad-mk.netlify.app/)
 
 ---
 ## Upcoming updates in this project:
